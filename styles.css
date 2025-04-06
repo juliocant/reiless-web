@@ -122,3 +122,23 @@ footer {
   background-color: var(--azul-marino);
   color: var(--blanco);
 }
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  padding: 15px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+}
