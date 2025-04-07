@@ -165,7 +165,7 @@ footer {
 }
 
 .categoria {
-  background-color: #ff9a9e;
+  background-color: #08478f;
   padding: 1.5rem;
   border-radius: 1rem;
   color: white;
@@ -175,5 +175,5 @@ footer {
 }
 
 .categoria:hover {
-  background-color: #ff6f91;
+  background-color: #2bf5f5;
 }
