@@ -80,6 +80,8 @@ nav a:hover {
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  text-decoration: none;
+  color: inherit;
 }
 .producto img {
   width: 100%;
@@ -89,6 +91,9 @@ nav a:hover {
   margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
 }
 
 .grid-productos {
@@ -175,5 +180,11 @@ footer {
 }
 
 .categoria:hover {
-  background-color: #2bf5f5;
+  background-color: #ccecec;
+}
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
