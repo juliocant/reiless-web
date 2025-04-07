@@ -151,3 +151,29 @@ footer {
 .whatsapp-float:hover {
   background-color: #1ebe5d;
 }
+.selector-productos {
+  text-align: center;
+  padding: 2rem;
+}
+
+.grid-categorias {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.categoria {
+  background-color: #ff9a9e;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.categoria:hover {
+  background-color: #ff6f91;
+}

@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reiless | Personaliza tu mundo con estilo </title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camisas | Reiless</title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
   <header>
-    <div class="logo"><img src="img/logo.png" alt="Reiless Logo"></div>
+    <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Reiless Logo" /></a></div>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="#sobre">Sobre Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#sobre">Sobre Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-
-  <section id="inicio" class="hero">
-    <h1>Personaliza tu mundo con estilo</h1>
-    <p>Camisetas, tazas y más para fans únicos como vos</p>
-    <a href="tienda.html" class="boton">Ver productos</a>
-  </section>
-
-  <section id="tienda" class="productos">
-    <h2>Nuestros productos</h2>
+  <main class="productos">
+    <h1>Camisas</h1>
     <div class="grid-productos">
       <div class="producto">
         <img src="/img/Camiseta jjk/6.jpg" alt="Camiseta Gojo Satoru">
@@ -53,36 +46,20 @@
       <div class="producto">
         <img src="/img/Camiseta jjk/21.jpg" alt="Camiseta Sukuna">
         <h3>Camiseta Sukuna</h3>
-        <p>Camiseta con la fuerza maldita del Rey de las Maldiciones, perfecta para quienes aman el lado más oscuro de Jujutsu Kaisen.</p>
+        <p>Camiseta con la fuerza maldita del Rey de las Maldiciones.</p>
         <span>C$380</span>
         <button class="boton">Agregar al carrito</button>
       </div>
-  </section>
-
-  <section id="sobre" class="sobre">
-    <h2>Sobre Reiless</h2>
-    <p>En Reiless creemos que la personalización es una forma de expresión. Diseñamos productos inspirados en lo que te gusta: desde personajes de anime hasta frases que cuentan tu historia.</p>
-  </section>
-
-  <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea placeholder="Escribinos un mensaje..."></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 Reiless. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/50577002788" class="whatsapp-float" target="_blank" title="Escribinos por WhatsApp">
     💬
   </a>
-
   <script src="js/scripts.js"></script>
 </body>
 </html>
