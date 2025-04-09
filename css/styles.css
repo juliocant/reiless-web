@@ -70,30 +70,48 @@ nav a:hover {
   border-radius: 30px;
   font-weight: bold;
   transition: background 0.3s;
+  margin-top: auto;
 }
 
 .boton:hover {
   background-color: #123e5a;
 }
 
-.productos, .sobre, .contacto {
-  padding: 3rem 2rem;
+.productos {
+  padding: 1rem 1rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10px auto;
   text-decoration: none;
   color: inherit;
 }
+.sobre {
+  padding: 3rem 2rem;
+  max-width: 300px;
+  margin: 0 0 0 10px;
+  text-decoration: none;
+  color: inherit;
+  float: right;
+}
+.contacto {
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  }
 .producto img {
   width: 100%;
   max-width: 280px;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-decoration: none;
   color: inherit;
-  background-color: transparent;
+  background-color: var(--gris-suave);
 }
 
 .grid-productos {
