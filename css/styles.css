@@ -130,6 +130,7 @@ footer {
   padding: 1.5rem;
   background-color: var(--azul-marino);
   color: var(--blanco);
+  margin-bottom: 15px;
 }
 
 
