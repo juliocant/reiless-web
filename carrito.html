@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1 style="text-align: center;">Tu Carrito de Compras</h1>
+  </header>
+
+  <main style="padding: 20px;">
+    <ul id="carrito-completo" style="list-style: none; padding: 0;"></ul>
+    <button onclick="vaciarCarrito()" style="padding:10px 15px; background:red; color:white; border:none; border-radius:5px;">Vaciar Carrito</button>
+  </main>
+
+  <script>
+    function mostrarCarritoCompleto() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const lista = document.getElementById("carrito-completo");
+      lista.innerHTML = "";
+      carrito.forEach((item, i) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        lista.appendChild(li);
+      });
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem("carrito");
+      mostrarCarritoCompleto();
+    }
+
+    document.addEventListener("DOMContentLoaded", mostrarCarritoCompleto);
+  </script>
+</body>
+</html>

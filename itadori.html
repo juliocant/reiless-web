@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
+<!-- Botón del carrito -->
+<div id="carrito-btn" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+  <button style="padding: 10px 15px; background-color: #000; color: #fff; border: none; cursor: pointer; border-radius: 5px;">
+    🛒 (<span id="contador-carrito">0</span>)
+  </button>
+</div>
+
+<!-- Vista previa del carrito como extensión -->
+<div id="vista-previa-carrito" style="display: none; position: fixed; top: 50px; right: 10px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 15px; width: 300px; z-index: 1001; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <h3 style="margin-top: 0;">Carrito</h3>
+  <ul id="lista-carrito" style="list-style:none; padding:0; margin:0; max-height: 200px; overflow-y:auto;"></ul>
+  <a href="carrito.html" style="display: block; margin-top: 10px; padding: 8px 12px; background: #000; color: #fff; text-align: center; border-radius: 5px; text-decoration: none;">Ver carrito completo</a>
+</div>
+
+
+<!-- Botón del carrito -->
+
+</div>
+
   <header>
     <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Reiless Logo"></a></div>
     <nav>
@@ -41,5 +61,6 @@
   <footer>
     <p>&copy; 2025 Reiless. Todos los derechos reservados.</p>
   </footer>
+  <script src="js/funcionalidad.js"></script>
 </body>
 </html>
