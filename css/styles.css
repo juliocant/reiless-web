@@ -177,6 +177,7 @@ footer {
   padding: .2rem;
   background-color: var(--azul-marino);
   color: var(--blanco);
+  margin-bottom: 15px;
 }
 
 
