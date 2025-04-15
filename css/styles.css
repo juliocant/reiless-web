@@ -84,6 +84,29 @@ nav a:hover {
   text-decoration: none;
   color: inherit;
 }
+.imgprodetalle {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--gris-suave);
+}
+
+.textprodetalle {
+  padding: 1rem 1rem;
+  max-width: 300px;
+  margin:  0 0 0 10px;
+  text-decoration: none;
+  color: inherit;
+}
 .sobre {
   padding: 3rem 2rem;
   max-width: 300px;
@@ -113,6 +136,7 @@ nav a:hover {
   color: inherit;
   background-color: var(--gris-suave);
 }
+
 
 .grid-productos {
   display: grid;
@@ -200,9 +224,7 @@ footer {
 .categoria:hover {
   background-color: #ccecec;
 }
-a,
-a:link,
-a:visited {
-  color: inherit;
+.enlacecamisas {
+  color: black;
   text-decoration: none;
 }
