@@ -1,10 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const enlacesAgregar = document.querySelectorAll(".agregar-carrito");
-  const modal = document.getElementById("modal-carrito");
+  const vistaPrevia = document.getElementById("vista-previa-carrito");
   const listaCarrito = document.getElementById("lista-carrito");
   const contador = document.getElementById("contador-carrito");
-  const botonCarrito = document.querySelector("#carrito-btn button");
+  const botonCarrito = document.getElementById("carrito-header-btn");
+  const cerrarCarrito = document.getElementById("cerrar-carrito");
 
   function actualizarVistaCarrito() {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -56,14 +56,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (botonCarrito) {
     botonCarrito.addEventListener("click", () => {
-      modal.style.display = "flex";
-      actualizarVistaCarrito();
+      if (vistaPrevia.style.display === "none" || vistaPrevia.style.display === "") {
+        vistaPrevia.style.display = "block";
+        actualizarVistaCarrito();
+        // Enfocar el primer elemento del carrito para accesibilidad
+        setTimeout(() => {
+          vistaPrevia.focus && vistaPrevia.focus();
+        }, 100);
+      } else {
+        vistaPrevia.style.display = "none";
+      }
     });
   }
 
-  window.cerrarCarrito = () => {
-    modal.style.display = "none";
-  };
+  if (cerrarCarrito) {
+    cerrarCarrito.addEventListener("click", () => {
+      vistaPrevia.style.display = "none";
+      botonCarrito && botonCarrito.focus();
+    });
+  }
+
+  // Cerrar el carrito con Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && vistaPrevia.style.display === "block") {
+      vistaPrevia.style.display = "none";
+      botonCarrito && botonCarrito.focus();
+    }
+  });
 
   actualizarVistaCarrito();
 });
