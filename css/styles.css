@@ -218,7 +218,8 @@ nav a:hover {
 .producto img {
   width: 100%;
   max-width: 280px;
-  height: auto;
+  height: 250px;
+  object-fit: cover;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
