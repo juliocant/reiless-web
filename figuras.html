@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tienda | Reiless</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figuras | Reiless</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
@@ -39,14 +39,37 @@
     </nav>
   </header>
 
-  <main class="selector-productos">
-    <h1>¿Qué te gustaría ver?</h1>
-    <div class="grid-categorias">
-      <a href="/camisas.html" class="categoria">👕 Camisas</a>
-      <a href="/agendas.html" class="categoria">📒 Agendas</a>
-      <a href="/tazas.html" class="categoria">☕ Tazas</a>
-      <a href="/hoddies.html" class="categoria">🧥 Hoodies</a>
-      <a href="/figuras.html" class="categoria">🧸 Figuras</a>
+  <main class="productos">
+    <h1>Figuras</h1>
+    <div class="grid-productos">
+      <div class="producto">
+        <img src="/img/Figuras/gojo.jpg" alt="Figura Satoru Gojo Crochet" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9e9.svg';">
+        <h3>Satoru Gojo Crochet</h3>
+        <p>Figura tejida a mano de Satoru Gojo, perfecta para fans de Jujutsu Kaisen que buscan un toque tierno y único en su colección.</p>
+        <span>C$1500</span>
+        <button class="boton">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="/img/Figuras/luffy.jpg" alt="Figura Luffy Crochet" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9e9.svg';">
+        <h3>Luffy Crochet</h3>
+        <p>Figura artesanal de Luffy de One Piece en versión crochet, ideal para coleccionistas y amantes del anime.</p>
+        <span>C$1500</span>
+        <button class="boton">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="/img/Figuras/gengar.jpg" alt="Figura Gengar" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47b.svg';">
+        <h3>Gengar</h3>
+        <p>Figura de Gengar, el icónico Pokémon fantasma, con acabado brillante y detalles fieles al personaje.</p>
+        <span>C$1000</span>
+        <button class="boton">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="/img/Figuras/hollow.jpg" alt="Figura Hollow Knight" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg';">
+        <h3>Hollow Knight</h3>
+        <p>Mini figura de Hollow Knight, ideal para decorar tu escritorio o estantería gamer.</p>
+        <span>C$300</span>
+        <button class="boton">Agregar al carrito</button>
+      </div>
     </div>
   </main>
 
@@ -74,11 +97,9 @@
     <p style="text-align: center; margin: 0; font-size: 0.98rem; opacity: 0.8;">&copy; <span id="anio-footer"></span> Reiless Otaku. Todos los derechos reservados.</p>
     <script>document.getElementById('anio-footer').textContent = new Date().getFullYear();</script>
   </footer>
-
   <a href="https://wa.me/50577002788" class="whatsapp-float" target="_blank" title="Escribinos por WhatsApp">
     💬
   </a>
-
   <script src="js/scripts.js"></script>
   <script src="js/funcionalidad.js"></script>
 </body>
