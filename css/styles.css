@@ -33,7 +33,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: .05rem 2rem;
 }
 
 /* Botón hamburguesa (invisible en desktop) */
@@ -104,9 +104,10 @@ nav a:hover {
 }
 
 .hero {
-  background-color: var(--blanco);
+  background: transparent;   /* deja ver el fondo del body */
   text-align: center;
-  padding: 5rem 2rem;
+  padding-top: 50px;   /* 80px header + espacio visual */
+  padding-bottom: 40px;
 }
 
 .hero h1 {
