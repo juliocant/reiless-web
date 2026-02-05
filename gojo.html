@@ -8,40 +8,6 @@
 </head>
 <body>
 
-<!-- Botón del carrito -->
-<div id="carrito-btn" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
-  <button style="padding: 10px 15px; background-color: #000; color: #fff; border: none; cursor: pointer; border-radius: 5px;">
-<<<<<<< HEAD
-    🛒 (<span id="contador-carrito">0</span>)
-  </button>
-</div>
-
-<!-- Vista previa del carrito como extensión -->
-<div id="vista-previa-carrito" style="display: none; position: fixed; top: 50px; right: 10px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 15px; width: 300px; z-index: 1001; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-  <h3 style="margin-top: 0;">Carrito</h3>
-  <ul id="lista-carrito" style="list-style:none; padding:0; margin:0; max-height: 200px; overflow-y:auto;"></ul>
-  <a href="carrito.html" style="display: block; margin-top: 10px; padding: 8px 12px; background: #000; color: #fff; text-align: center; border-radius: 5px; text-decoration: none;">Ver carrito completo</a>
-</div>
-
-
-<!-- Botón del carrito -->
-
-=======
-    🛒 Ver Carrito (<span id="contador-carrito">0</span>)
-  </button>
-</div>
-
-<!-- Modal del carrito -->
-<div id="modal-carrito" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:1001; align-items:center; justify-content:center;">
-  <div style="background:#fff; padding:20px; border-radius:8px; width:90%; max-width:400px; max-height:80%; overflow:auto; position:relative;">
-    <h2>Tu Carrito</h2>
-    <ul id="lista-carrito" style="list-style:none; padding:0;"></ul>
-    <button onclick="cerrarCarrito()" style="margin-top:10px; padding:8px 12px;">Cerrar</button>
-    <a href="carrito.html" style="margin-left:10px; padding:8px 12px; background:#000; color:#fff; text-decoration:none; border-radius:5px;">Ver Carrito Completo</a>
-  </div>
->>>>>>> f664eb35087d239256e0fcfc719af20558b88632
-</div>
-
   <header>
     <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Reiless Logo"></a></div>
     <nav>
@@ -50,27 +16,59 @@
         <li><a href="tienda.html">Tienda</a></li>
       </ul>
     </nav>
+    <button id="carrito-header-btn" aria-label="Ver carrito" style="background: none; border: none; cursor: pointer; position: relative; margin-left: 1rem; font-size: 1.5rem;">
+      <span aria-hidden="true">🛒</span>
+      <span id="contador-carrito" style="position: absolute; top: -8px; right: -8px; background: #e53935; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; min-width: 20px; text-align: center;">0</span>
+    </button>
   </header>
+  <!-- Vista previa del carrito accesible -->
+  <aside id="vista-previa-carrito" aria-label="Vista previa del carrito" style="display: none; position: fixed; top: 70px; right: 10px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 15px; width: 90vw; max-width: 340px; z-index: 1001; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: all 0.3s;">
+    <h3 style="margin-top: 0;">Carrito</h3>
+    <ul id="lista-carrito" style="list-style:none; padding:0; margin:0; max-height: 200px; overflow-y:auto;"></ul>
+    <a href="carrito.html" style="display: block; margin-top: 10px; padding: 8px 12px; background: #000; color: #fff; text-align: center; border-radius: 5px; text-decoration: none;">Ver carrito completo</a>
+    <button id="cerrar-carrito" aria-label="Cerrar carrito" style="position: absolute; top: 8px; right: 8px; background: none; border: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
+  </aside>
 
-  <main class="detalle-producto">
-    <div class="producto-detalle">
-      <img src="/img/Camiseta jjk/6.jpg" alt="Camiseta Gojo Satoru">
-      <div class="info">
-        <h1>Camiseta Gojo</h1>
-        <p>Inspirada en el poderoso hechicero Gojo Satoru de *Jujutsu Kaisen*. Esta camiseta combina estilo, poder y personalidad para destacar en cualquier ocasión.</p>
-        <ul>
-          <li>Material: 100% algodón suave</li>
-          <li>Tallas: S, M, L, XL</li>
-          <li>Color: Negro con estampado en blanco y azul</li>
-        </ul>
-        <span class="precio">C$380</span>
-        <button class="boton">Agregar al carrito</button>
-      </div>
+  <main class="detalle-producto" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; justify-content: center; max-width: 900px; margin: 2rem auto;">
+    <div class="imgprodetalle" style="flex: 1 1 320px; max-width: 400px; display: flex; align-items: center; justify-content: center; background: #f8f8f8; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+      <img src="/img/Camiseta jjk/6.jpg" alt="Camiseta Gojo Satoru" style="width: 100%; max-width: 340px; border-radius: 10px;">
+    </div>
+    <div class="textprodetalle" style="flex: 1 1 320px; max-width: 400px; display: flex; flex-direction: column; justify-content: center; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem;">
+      <h1 style="margin-top:0;">Camiseta Gojo</h1>
+      <p style="font-size:1.1rem;">Luce el poder y el carisma de Satoru Gojo, el hechicero más fuerte de Jujutsu Kaisen. Esta camiseta es perfecta para quienes buscan destacar con estilo y actitud.</p>
+      <ul style="margin: 1rem 0; padding-left: 1.2rem;">
+        <li>Material: Algodón premium con poliéster</li>
+        <li>Tallas: S, M, L, XL</li>
+        <li>Color: Negro con estampado azul y blanco</li>
+      </ul>
+      <span class="precio" style="font-size:1.3rem; font-weight:bold; color:#0b2a42; margin-bottom:1rem;">C$450</span>
+      <button class="boton" style="margin-top:0.5rem;">Agregar al carrito</button>
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Reiless. Todos los derechos reservados.</p>
+  <footer style="background: #0b2a42; color: #fff; padding: 2.5rem 1rem 1.2rem 1rem; margin-top: 3rem; border-radius: 18px 18px 0 0; box-shadow: 0 -2px 12px rgba(0,0,0,0.07);">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: flex-start;">
+      <div style="flex: 1 1 220px; min-width: 180px;">
+        <img src="img/logo.png" alt="Reiless Logo" style="width: 120px; margin-bottom: 0.7rem; filter: brightness(0) invert(1);">
+        <p style="margin:0; font-size: 1rem; opacity: 0.85;">Reiless Otaku - Tienda de cultura pop y anime en Nicaragua.</p>
+      </div>
+      <nav aria-label="Enlaces útiles" style="flex: 1 1 180px; min-width: 150px;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><a href="index.html" style="color: #fff; text-decoration: none; opacity: 0.95;">Inicio</a></li>
+          <li><a href="tienda.html" style="color: #fff; text-decoration: none; opacity: 0.95;">Tienda</a></li>
+          <li><a href="#contacto" style="color: #fff; text-decoration: none; opacity: 0.95;">Contacto</a></li>
+          <li><a href="https://instagram.com/reiless.ni" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; opacity: 0.95;">Instagram</a></li>
+          <li><a href="https://wa.me/50577002788" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; opacity: 0.95;">WhatsApp</a></li>
+        </ul>
+      </nav>
+      <div style="flex: 1 1 220px; min-width: 180px;">
+        <p style="margin:0; font-size: 1rem; opacity: 0.85;">¿Dudas? <a href="mailto:reiless.ni@gmail.com" style="color:#ffd600; text-decoration:underline;">reiless.ni@gmail.com</a></p>
+        <p style="margin:0.5rem 0 0 0; font-size: 1rem; opacity: 0.85;">Managua, Nicaragua</p>
+      </div>
+    </div>
+    <hr style="border: none; border-top: 1px solid #fff2; margin: 1.5rem 0 1rem 0;">
+    <p style="text-align: center; margin: 0; font-size: 0.98rem; opacity: 0.8;">&copy; <span id="anio-footer"></span> Reiless Otaku. Todos los derechos reservados.</p>
+    <script>document.getElementById('anio-footer').textContent = new Date().getFullYear();</script>
   </footer>
   <script src="js/funcionalidad.js"></script>
 </body>

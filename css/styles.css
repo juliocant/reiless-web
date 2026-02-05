@@ -62,19 +62,29 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
-.boton .agregar-carrito {
+.agregar-carrito, .boton {
+  display: inline-block;
   background-color: var(--azul-marino);
   color: var(--blanco);
   padding: 1rem 2rem;
-  text-decoration: none;
+  border: none;
   border-radius: 30px;
   font-weight: bold;
-  transition: background 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, box-shadow 0.2s, transform 0.1s;
   margin-top: auto;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
 }
 
-.boton:hover {
+.agregar-carrito:hover, .agregar-carrito:focus,
+.boton:hover, .boton:focus {
   background-color: #123e5a;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.03);
 }
 
 .productos {
@@ -122,6 +132,31 @@ nav a:hover {
   text-decoration: none;
   color: inherit;
   }
+.producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.producto-precio-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.producto-precio-boton-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.producto span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--azul-marino);
+  margin: 0;
+}
 .producto img {
   width: 100%;
   max-width: 280px;

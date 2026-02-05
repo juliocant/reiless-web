@@ -43,21 +43,21 @@
     <h1>Hoodies</h1>
     <div class="grid-productos">
       <div class="producto">
-        <img src="/img/hoddies/hoodie-akatsuki.jpg" alt="Hoodie Akatsuki">
+        <img src="/img/hoddies/hoodie-akatsuki.jpg" alt="Hoodie Akatsuki" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f455.svg';">
         <h3>Hoodie Akatsuki</h3>
         <p>Diseño inspirado en la famosa organización ninja.</p>
         <span>C$650</span>
         <button class="boton">Agregar al carrito</button>
       </div>
       <div class="producto">
-        <img src="/img/hoddies/hoodie-zelda.jpg" alt="Hoodie Zelda">
+        <img src="/img/hoddies/hoodie-zelda.jpg" alt="Hoodie Zelda" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f455.svg';">
         <h3>Hoodie Zelda</h3>
         <p>Inspirado en la saga de The Legend of Zelda, ideal para fans.</p>
         <span>C$670</span>
         <button class="boton">Agregar al carrito</button>
       </div>
       <div class="producto">
-        <img src="/img/hoddies/hoodie-cat.jpg" alt="Hoodie Cat">
+        <img src="/img/hoddies/hoodie-cat.jpg" alt="Hoodie Cat" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f408.svg';">
         <h3>Hoodie Cat</h3>
         <p>Estilo kawaii con orejitas y diseño de gatito en la espalda.</p>
         <span>C$630</span>
@@ -66,8 +66,29 @@
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Reiless. Todos los derechos reservados.</p>
+  <footer style="background: #0b2a42; color: #fff; padding: 2.5rem 1rem 1.2rem 1rem; margin-top: 3rem; border-radius: 18px 18px 0 0; box-shadow: 0 -2px 12px rgba(0,0,0,0.07);">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: flex-start;">
+      <div style="flex: 1 1 220px; min-width: 180px;">
+        <img src="img/logo.png" alt="Reiless Logo" style="width: 120px; margin-bottom: 0.7rem; filter: brightness(0) invert(1);">
+        <p style="margin:0; font-size: 1rem; opacity: 0.85;">Reiless Otaku - Tienda de cultura pop y anime en Nicaragua.</p>
+      </div>
+      <nav aria-label="Enlaces útiles" style="flex: 1 1 180px; min-width: 150px;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><a href="index.html" style="color: #fff; text-decoration: none; opacity: 0.95;">Inicio</a></li>
+          <li><a href="tienda.html" style="color: #fff; text-decoration: none; opacity: 0.95;">Tienda</a></li>
+          <li><a href="#contacto" style="color: #fff; text-decoration: none; opacity: 0.95;">Contacto</a></li>
+          <li><a href="https://instagram.com/reiless.ni" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; opacity: 0.95;">Instagram</a></li>
+          <li><a href="https://wa.me/50577002788" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; opacity: 0.95;">WhatsApp</a></li>
+        </ul>
+      </nav>
+      <div style="flex: 1 1 220px; min-width: 180px;">
+        <p style="margin:0; font-size: 1rem; opacity: 0.85;">¿Dudas? <a href="mailto:reiless.ni@gmail.com" style="color:#ffd600; text-decoration:underline;">reiless.ni@gmail.com</a></p>
+        <p style="margin:0.5rem 0 0 0; font-size: 1rem; opacity: 0.85;">Managua, Nicaragua</p>
+      </div>
+    </div>
+    <hr style="border: none; border-top: 1px solid #fff2; margin: 1.5rem 0 1rem 0;">
+    <p style="text-align: center; margin: 0; font-size: 0.98rem; opacity: 0.8;">&copy; <span id="anio-footer"></span> Reiless Otaku. Todos los derechos reservados.</p>
+    <script>document.getElementById('anio-footer').textContent = new Date().getFullYear();</script>
   </footer>
   <a href="https://wa.me/50577002788" class="whatsapp-float" target="_blank" title="Escribinos por WhatsApp">
     💬
