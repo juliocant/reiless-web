@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const navToggle = document.getElementById('nav-toggle');
   const nav = document.querySelector('header nav');
   if (navToggle && nav) {
-    navToggle.addEventListener('click', function () {
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
       const isOpen = nav.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       // cambiar foco al primer enlace cuando se abre
       if (isOpen) {
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', function (e) {
       if (!nav.contains(e.target) && e.target !== navToggle && nav.classList.contains('open')) {
         nav.classList.remove('open');
+        navToggle.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
