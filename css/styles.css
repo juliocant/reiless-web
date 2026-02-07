@@ -10,10 +10,9 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-
   background-image: url("../img/banner-reiless.png");
   background-size: cover;
-  background-position: center;
+  background-position: center px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #0b2a42;
@@ -23,7 +22,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.678);
+  background: rgba(255, 255, 255, 0.068);
   z-index: -1;
 }
 
@@ -106,8 +105,10 @@ nav a:hover {
 .hero {
   background: transparent;   /* deja ver el fondo del body */
   text-align: center;
-  padding-top: 50px;   /* 80px header + espacio visual */
-  padding-bottom: 40px;
+  padding-top: 110px;   /* 80px header + espacio visual */
+  padding-bottom: px;
+
+
 }
 
 .hero h1 {
@@ -175,6 +176,17 @@ nav a:hover {
   text-decoration: none;
   color: inherit;
 }
+/* Caja gris que envuelve la descripción de cada producto */
+.textprodetalle > p,
+.producto p {
+  background: #f2f2f27c;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  margin: 0.6rem 0;
+  color: #0b2a42;
+  line-height: 1.5;
+}
 .sobre {
   padding: 3rem 2rem;
   max-width: 300px;
@@ -184,12 +196,12 @@ nav a:hover {
   float: right;
 }
 .contacto {
-  padding: 3rem 2rem;
-  max-width: 600px;
-  margin: 0 5%;
+  padding: 1.25rem 1rem; /* más compacto */
+  max-width: 480px;
+  margin: 0 0 1.5rem 1.6rem; /* alineado a la izquierda */
   text-decoration: none;
   color: inherit;
-  }
+}
 .producto {
   display: flex;
   flex-direction: column;
@@ -304,6 +316,52 @@ form button {
 
 form button:hover {
   background-color: #123e5a;
+}
+
+#contacto form{
+  max-width: 420px; /* reducido */
+  margin: 0.4rem 0 1.25rem 0; /* sin centrar, alineado a la izquierda */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#contacto form input,
+#contacto form textarea{
+  width: 100%;
+  background: #f6f7f8;
+  padding: 10px 12px; /* menos alto */
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 18px rgba(11,42,66,0.04);
+  font-size: 0.98rem;
+  color: #111;
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 120ms ease;
+}
+#contacto form textarea{
+  min-height: 100px;
+  resize: vertical;
+}
+#contacto form input::placeholder,
+#contacto form textarea::placeholder{
+  color: #9aa3ad;
+}
+#contacto form input:focus,
+#contacto form textarea:focus{
+  outline: none;
+  border-color: var(--azul-marino);
+  box-shadow: 0 12px 28px rgba(11,42,66,0.08);
+  transform: translateY(-2px);
+}
+#contacto form button{
+  align-self: flex-end;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(11,42,66,0.06);
+}
+
+@media (max-width: 600px){
+  #contacto form{ padding: 0 1rem; }
+  #contacto form button{ align-self: stretch; }
 }
 
 footer {
