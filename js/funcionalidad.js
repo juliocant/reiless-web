@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const vistaPrevia = document.getElementById("vista-previa-carrito");
   const listaCarrito = document.getElementById("lista-carrito");
   const contador = document.getElementById("contador-carrito");
-  const botonCarrito = document.getElementById("carrito-header-btn");
+  let botonCarrito = document.getElementById("carrito-header-btn");
+  // Soporta también el botón flotante antiguo `carrito-btn` o cualquier toggle con clase `carrito-toggle`
+  if (!botonCarrito) botonCarrito = document.getElementById("carrito-btn");
+  if (!botonCarrito) botonCarrito = document.querySelector(".carrito-toggle");
   const cerrarCarrito = document.getElementById("cerrar-carrito");
 
   function actualizarVistaCarrito() {

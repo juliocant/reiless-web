@@ -42,8 +42,13 @@
   </section>
 
   <section id="camisetas" class="productos">
-    <h2>Camisetas Anime</h2>
-    <div class="grid-productos">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+      <h2>Camisetas Anime</h2>
+      <a href="camisas.html" class="boton">Ver más</a>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-nav prev" aria-label="Anterior">‹</button>
+      <div class="carousel" aria-label="Carrusel de camisetas" data-autoplay="true" data-autoplay-interval="3500">
       <div class="producto">
         <a href="/gojo.html" class="enlacecamisas"> 
           <img src="/img/Camiseta jjk/Gojo1.jpg" alt="Camiseta Gojo Satoru">
@@ -88,6 +93,42 @@
           <a href="#" class="agregar-carrito" data-producto="Camiseta Sukuna">Agregar al carrito</a>
         </div>
       </div>
+      <!-- Productos adicionales visibles al deslizar -->
+      <div class="producto">
+        <a href="camisas.html" class="enlacecamisas">
+          <img src="/img/Camiseta jjk/16.jpg" alt="Camiseta JJk 16">
+          <h3>Camiseta JJk 16</h3>
+          <p>Diseño alternativo, edición limitada.</p>
+        </a>
+        <div class="producto-precio-boton-col">
+          <span>C$450</span>
+          <a href="#" class="agregar-carrito" data-producto="Camiseta JJk 16">Agregar al carrito</a>
+        </div>
+      </div>
+      <div class="producto">
+        <a href="camisas.html" class="enlacecamisas">
+          <img src="/img/Camiseta jjk/2.jpg" alt="Camiseta JJk 2">
+          <h3>Camiseta JJk 2</h3>
+          <p>Estampa clásica para fans del anime.</p>
+        </a>
+        <div class="producto-precio-boton-col">
+          <span>C$450</span>
+          <a href="#" class="agregar-carrito" data-producto="Camiseta JJk 2">Agregar al carrito</a>
+        </div>
+      </div>
+      <div class="producto">
+        <a href="camisas.html" class="enlacecamisas">
+          <img src="/img/Camiseta jjk/4.jpg" alt="Camiseta JJk 4">
+          <h3>Camiseta JJk 4</h3>
+          <p>Estilo minimalista con detalles del anime.</p>
+        </a>
+        <div class="producto-precio-boton-col">
+          <span>C$450</span>
+          <a href="#" class="agregar-carrito" data-producto="Camiseta JJk 4">Agregar al carrito</a>
+        </div>
+      </div>
+      </div>
+      <button class="carousel-nav next" aria-label="Siguiente">›</button>
     </div>
   </section>
 

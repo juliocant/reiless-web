@@ -37,3 +37,84 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+  // Carrusel: flechas, autoplay suave y efecto de proximidad
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(function (carousel) {
+      const wrap = carousel.closest('.carousel-wrap');
+      const btnPrev = wrap ? wrap.querySelector('.carousel-nav.prev') : null;
+      const btnNext = wrap ? wrap.querySelector('.carousel-nav.next') : null;
+      const auto = carousel.dataset.autoplay === 'true';
+      const intervalMs = parseInt(carousel.dataset.autoplayInterval || carousel.getAttribute('data-autoplay-interval') || 3500, 10) || 3500;
+      let timer = null;
+      let userInteracted = false;
+
+      function computeItemWidth() {
+        const producto = carousel.querySelector('.producto');
+        const gap = parseInt(getComputedStyle(carousel).gap) || 16;
+        return producto ? Math.round(producto.getBoundingClientRect().width + gap) : Math.round(carousel.clientWidth / 3);
+      }
+
+      let itemWidth = computeItemWidth();
+      window.addEventListener('resize', function () { itemWidth = computeItemWidth(); });
+      // Recompute after images load inside carousel
+      carousel.querySelectorAll('img').forEach(img => img.addEventListener('load', function () { itemWidth = computeItemWidth(); }));
+
+      function scrollNext() { carousel.scrollBy({ left: itemWidth, behavior: 'smooth' }); }
+      function scrollPrev() { carousel.scrollBy({ left: -itemWidth, behavior: 'smooth' }); }
+
+      if (btnNext) btnNext.addEventListener('click', function () { userInteracted = true; scrollNext(); resetTimer(); });
+      if (btnPrev) btnPrev.addEventListener('click', function () { userInteracted = true; scrollPrev(); resetTimer(); });
+
+      function startTimer() { if (auto && !timer && !userInteracted) timer = setInterval(scrollNext, intervalMs); }
+      function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+      function resetTimer() { stopTimer(); if (!userInteracted) startTimer(); }
+
+      carousel.addEventListener('mouseenter', stopTimer);
+      carousel.addEventListener('mouseleave', function () { if (auto && !userInteracted) startTimer(); });
+      carousel.addEventListener('focusin', stopTimer);
+      carousel.addEventListener('focusout', function () { if (auto && !userInteracted) startTimer(); });
+
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); userInteracted = true; scrollNext(); resetTimer(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); userInteracted = true; scrollPrev(); resetTimer(); }
+      });
+
+      // Proximity effect for nav buttons
+      if (wrap && (btnPrev || btnNext)) {
+        const zone = 160; // px zone from edges where buttons start showing
+        wrap.addEventListener('mousemove', function (e) {
+          const rect = wrap.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const w = rect.width;
+          const leftDist = Math.max(0, Math.min(zone, x));
+          const rightDist = Math.max(0, Math.min(zone, w - x));
+          const leftOpacity = leftDist < zone ? (1 - leftDist / zone) : 0;
+          const rightOpacity = rightDist < zone ? (1 - rightDist / zone) : 0;
+          if (btnPrev) {
+            btnPrev.style.opacity = String(Math.max(0, Math.min(1, leftOpacity)));
+            btnPrev.style.transform = `translateX(${ -16 * (1 - leftOpacity) }px) scale(${ 1 + 0.06 * leftOpacity })`;
+          }
+          if (btnNext) {
+            btnNext.style.opacity = String(Math.max(0, Math.min(1, rightOpacity)));
+            btnNext.style.transform = `translateX(${ 16 * (1 - rightOpacity) }px) scale(${ 1 + 0.06 * rightOpacity })`;
+          }
+        });
+
+        wrap.addEventListener('mouseleave', function () {
+          if (btnPrev) { btnPrev.style.opacity = '0'; btnPrev.style.transform = 'translateX(0) scale(1)'; }
+          if (btnNext) { btnNext.style.opacity = '0'; btnNext.style.transform = 'translateX(0) scale(1)'; }
+        });
+
+        // Ensure visible when focused via keyboard
+        if (btnPrev) btnPrev.addEventListener('focus', function () { btnPrev.style.opacity = '1'; });
+        if (btnPrev) btnPrev.addEventListener('blur', function () { btnPrev.style.opacity = '0'; });
+        if (btnNext) btnNext.addEventListener('focus', function () { btnNext.style.opacity = '1'; });
+        if (btnNext) btnNext.addEventListener('blur', function () { btnNext.style.opacity = '0'; });
+      }
+
+      // Start autoplay if enabled
+      startTimer();
+    });
+  });

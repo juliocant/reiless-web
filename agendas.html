@@ -8,23 +8,6 @@
 </head>
 <body>
 
-<!-- Botón del carrito -->
-<div id="carrito-btn" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
-  <button style="padding: 10px 15px; background-color: #000; color: #fff; border: none; cursor: pointer; border-radius: 5px;">
-    🛒 Ver Carrito (<span id="contador-carrito">0</span>)
-  </button>
-</div>
-
-<!-- Modal del carrito -->
-<div id="modal-carrito" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:1001; align-items:center; justify-content:center;">
-  <div style="background:#fff; padding:20px; border-radius:8px; width:90%; max-width:400px; max-height:80%; overflow:auto; position:relative;">
-    <h2>Tu Carrito</h2>
-    <ul id="lista-carrito" style="list-style:none; padding:0;"></ul>
-    <button onclick="cerrarCarrito()" style="margin-top:10px; padding:8px 12px;">Cerrar</button>
-    <a href="carrito.html" style="margin-left:10px; padding:8px 12px; background:#000; color:#fff; text-decoration:none; border-radius:5px;">Ver Carrito Completo</a>
-  </div>
-</div>
-
   <header>
     <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Reiless Logo" /></a></div>
     <nav>
@@ -35,7 +18,19 @@
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <button id="carrito-header-btn" aria-label="Ver carrito" style="background: none; border: none; cursor: pointer; position: relative; margin-left: 1rem; font-size: 1.5rem;">
+      <span aria-hidden="true">🛒</span>
+      <span id="contador-carrito" style="position: absolute; top: -8px; right: -8px; background: #e53935; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; min-width: 20px; text-align: center;">0</span>
+    </button>
   </header>
+
+  <!-- Vista previa del carrito accesible -->
+  <aside id="vista-previa-carrito" aria-label="Vista previa del carrito" style="display: none; position: fixed; top: 70px; right: 10px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 15px; width: 90vw; max-width: 340px; z-index: 1001; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: all 0.3s;">
+    <h3 style="margin-top: 0;">Carrito</h3>
+    <ul id="lista-carrito" style="list-style:none; padding:0; margin:0; max-height: 200px; overflow-y:auto;"></ul>
+    <a href="carrito.html" style="display: block; margin-top: 10px; padding: 8px 12px; background: #000; color: #fff; text-align: center; border-radius: 5px; text-decoration: none;">Ver carrito completo</a>
+    <button id="cerrar-carrito" aria-label="Cerrar carrito" style="position: absolute; top: 8px; right: 8px; background: none; border: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
+  </aside>
 
   <main class="productos">
     <h1>Agendas</h1>
